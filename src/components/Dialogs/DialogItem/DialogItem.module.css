@@ -1,0 +1,8 @@
+.chatItems .chat {
+    color: white;
+    text-decoration: none;
+}
+
+.chatItems .active {
+    color: gold;
+}

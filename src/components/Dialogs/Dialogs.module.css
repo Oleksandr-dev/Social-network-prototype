@@ -1,0 +1,15 @@
+.chats {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    padding: 10px;
+
+}
+
+.chats .chatItems {
+    color: white;
+    text-decoration: none;
+}
+
+.messages {
+    color: white;
+}
