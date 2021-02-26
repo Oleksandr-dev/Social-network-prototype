@@ -6,3 +6,9 @@
 .chatItems .active {
     color: gold;
 }
+
+.chat img{
+    width: 50px;
+    height: 50px;
+    border-radius:30px;
+}

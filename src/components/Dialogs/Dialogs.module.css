@@ -13,3 +13,7 @@
 .messages {
     color: white;
 }
+
+.sendMSG{
+    align-items: flex-end;
+}
