@@ -1,18 +1,33 @@
 import React from "react";
 import style from "./Dialogs.module.css"
-import {NavLink} from "react-router-dom";
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
 
 
 const Dialogs = (props) => {
 
-    let newMessageElement = React.createRef();
+    const newMessageElement = React.createRef();
 
-    let sendMessage = () => {
+    const sendMessage = () => {
         let text = newMessageElement.current.value
-        alert(text)
+        const action ={
+            type: 'ADD-MESSAGE',
+        }
+        props.dispatch(action)
+        console.log(text)
     }
+
+    const onMessageChange = () => {
+        let text = newMessageElement.current.value
+        const action ={
+            type: 'ADD-MESSAGE',
+            newText: text,
+        }
+        props.dispatch(action)
+        console.log(text)
+    }
+
+
 
 
     let dialogElement = props.dialogsData.dialogs.map(d => <DialogItem name={d.name} id={d.id} img={d.img}/>)
@@ -30,7 +45,9 @@ const Dialogs = (props) => {
                 </div>
                 <div className={style.sendMSG}>
                     <div>
-                        <textarea ref={newMessageElement}></textarea>
+                        <textarea ref={newMessageElement}
+                                  value={props.dialogsData.newMessageText}
+                                  onChange={onMessageChange}/>
                     </div>
                     <div>
                         <button onClick={sendMessage}>Send message</button>
